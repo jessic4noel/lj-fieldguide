@@ -1,18 +1,28 @@
-/* Shared styles — A Field Guide to ЖЖ wireframe */
+/* Shared styles — A Field Guide to ЖЖ
+   Visual direction: late-2000s LiveJournal redesign (Art. Lebedev Studio era):
+   navy gradient header, LIVEJOURNAL wordmark + pencil-circle icon, light blue
+   body, bold sans navigation, tab row under page title, white user chip. */
 
 :root {
-  --paper: #cdd9e6;
+  /* Palette */
+  --paper: #e8f2fb;          /* light blue body background */
+  --paper-soft: #f3f8fc;
   --card: #ffffff;
-  --nav: #5d7493;
-  --nav-dark: #3e5870;
-  --strip: #e1e8ef;
-  --rule: #b8c5d3;
-  --rule-dotted: #c8d2dc;
-  --link: #003366;
+  --nav-top: #355aa5;        /* navy gradient — top */
+  --nav-mid: #2a4a8d;        /* navy gradient — mid */
+  --nav-bot: #1f3870;        /* navy gradient — bottom */
+  --nav-edge: #14264c;
+  --strip: #e3edf6;
+  --rule: #bcd0e3;
+  --rule-soft: #d8e2ec;
+  --rule-dotted: #c8d6e3;
+  --link: #1d63b8;
+  --link-hover: #2d7ad9;
   --link-visited: #553388;
-  --ink: #1a1814;
-  --muted: #6b7888;
-  --accent: #7a2415;
+  --ink: #14181f;
+  --muted: #6f7e91;
+  --accent: #c84d24;         /* warm coral accent (banner/coin) */
+  --gold: #f0b41a;           /* yellow coin */
   --warm-paper: #f5f1e8;
 }
 
@@ -21,74 +31,275 @@ html, body { margin: 0; padding: 0; }
 body {
   background: var(--paper);
   color: var(--ink);
-  font-family: Verdana, Tahoma, Geneva, sans-serif;
-  font-size: 13px;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", sans-serif;
+  font-size: 14px;
   line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-a { color: var(--link); }
+a { color: var(--link); text-decoration: underline; }
+a:hover { color: var(--link-hover); }
 a:visited { color: var(--link-visited); }
 
-/* Navbar — the LJ-style top strip */
+/* ===================== TOP NAVBAR ===================== */
 .lj-navbar {
-  background: var(--nav);
+  background: linear-gradient(to bottom, var(--nav-top) 0%, var(--nav-mid) 55%, var(--nav-bot) 100%);
   color: #fff;
-  padding: 8px 24px;
+  padding: 0 28px;
   display: flex;
   align-items: center;
-  gap: 22px;
-  font-size: 12px;
-  border-bottom: 2px solid var(--nav-dark);
-  letter-spacing: 0.02em;
-}
-.lj-navbar .logo {
-  font-weight: bold;
+  gap: 28px;
   font-size: 15px;
-  letter-spacing: 0.05em;
-}
-.lj-navbar .logo .zhzh { color: #ffd9a3; }
-.lj-navbar a { color: #fff; text-decoration: none; }
-.lj-navbar a:hover { text-decoration: underline; }
-.lj-navbar .right { margin-left: auto; opacity: 0.85; }
-
-/* Page wrapper */
-.page {
-  max-width: 760px;
-  margin: 24px auto 80px;
-  padding: 0 16px;
+  border-bottom: 3px solid var(--nav-edge);
+  min-height: 68px;
+  letter-spacing: 0;
 }
 
-/* Hub heading */
-.page-title {
-  font-family: Georgia, serif;
-  font-size: 36px;
-  margin: 24px 0 4px;
+/* Logo block: pencil-in-circle icon + LIVEJOURNAL wordmark */
+.lj-navbar .logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-right: 12px;
+  text-decoration: none;
+  color: #fff;
+}
+.lj-navbar .lj-icon {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+}
+.lj-navbar .lj-wordmark {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-weight: 900;
+  font-size: 22px;
+  letter-spacing: 0.02em;
+  color: #fff;
+}
+.lj-navbar .lj-wordmark sup {
+  font-size: 9px;
+  font-weight: 700;
+  vertical-align: super;
+  margin-left: 2px;
+}
+.lj-navbar .zhzh { color: #ffd9a3; }
+
+/* Nav links */
+.lj-navbar a.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 6px 2px;
+}
+.lj-navbar a.nav-link:hover { text-decoration: underline; }
+
+/* Search box */
+.lj-navbar .search {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 3px;
+  padding: 6px 10px;
+  min-width: 240px;
+  color: #888;
+  font-size: 13px;
+}
+.lj-navbar .search::before {
+  content: "🔍";
+  margin-right: 6px;
+  opacity: 0.55;
+  font-size: 12px;
+}
+
+/* User chip on the far right */
+.lj-navbar .user-chip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 18px;
+  font-size: 13px;
+}
+.lj-navbar .user-chip .avatar {
+  width: 22px;
+  height: 22px;
+  border-radius: 2px;
+  background: linear-gradient(135deg, #93b7df 0%, #4a76b5 100%);
+  display: inline-block;
+}
+.lj-navbar .user-chip .username {
+  color: #fff;
+  font-weight: 700;
+}
+.lj-navbar .user-chip .badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #fff;
+  font-weight: 700;
+}
+.lj-navbar .user-chip .badge .icon-mail,
+.lj-navbar .user-chip .badge .icon-coin {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  border-radius: 50%;
+}
+.lj-navbar .user-chip .badge .icon-mail {
+  background: #fff;
+  color: var(--nav-bot);
+  font-size: 10px;
+  text-align: center;
+  line-height: 16px;
+  font-weight: 900;
+}
+.lj-navbar .user-chip .badge .icon-coin {
+  background: var(--gold);
+  color: #6a4a00;
+  font-size: 10px;
+  text-align: center;
+  line-height: 16px;
+  font-weight: 900;
+}
+.lj-navbar .user-chip a.exit-link {
+  color: #fff;
+  margin-left: 8px;
+  text-decoration: none;
+  opacity: 0.85;
+}
+.lj-navbar .user-chip a.exit-link:hover { text-decoration: underline; }
+
+/* Sub-row under the navbar with "Write / Friends feed" */
+.lj-subnav {
+  background: linear-gradient(to bottom, var(--nav-bot) 0%, var(--nav-edge) 100%);
+  padding: 6px 28px;
+  text-align: right;
+  font-size: 13px;
+}
+.lj-subnav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 18px;
   font-weight: 600;
-  letter-spacing: -0.01em;
+  opacity: 0.92;
+}
+.lj-subnav a:hover { text-decoration: underline; opacity: 1; }
+
+/* ===================== PAGE WRAPPER ===================== */
+.page {
+  max-width: 1100px;
+  margin: 32px auto 80px;
+  padding: 0 28px;
+}
+
+/* Page title block */
+.page-title {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 42px;
+  font-weight: 900;
+  margin: 12px 0 6px;
+  letter-spacing: -0.015em;
+  color: var(--ink);
 }
 .page-title .zhzh { color: var(--accent); }
 .page-subtitle {
   color: var(--muted);
   font-style: italic;
-  margin: 0 0 6px;
+  margin: 0 0 10px;
   font-size: 16px;
   font-family: Georgia, serif;
 }
 .curator-line {
-  font-size: 11px;
+  font-size: 12px;
   color: var(--muted);
-  margin: 0 0 28px;
+  margin: 0 0 22px;
 }
-.curator-line strong { color: var(--ink); font-weight: bold; }
+.curator-line strong { color: var(--ink); font-weight: 700; }
+
+/* Tab row — "Summary / The Big Year / Updates from friends / Shop" */
+.page-tabs {
+  display: flex;
+  gap: 26px;
+  align-items: center;
+  margin: 18px 0 28px;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 0;
+}
+.page-tabs a {
+  display: inline-block;
+  padding: 8px 14px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+.page-tabs a.active {
+  background: var(--nav-mid);
+  color: #fff;
+  border-radius: 4px 4px 0 0;
+  padding: 8px 18px;
+}
+.page-tabs a:not(.active):hover {
+  border-bottom: 2px solid var(--nav-mid);
+}
 
 .note-strip {
   background: #fff8e1;
   border: 1px solid #e6d59a;
   border-left: 3px solid var(--accent);
-  padding: 10px 14px;
-  font-size: 12px;
+  padding: 12px 16px;
+  font-size: 13px;
   color: #5a4a1a;
   margin-bottom: 28px;
+  font-family: Georgia, serif;
+}
+
+/* Extended abstract section on the landing page */
+.abstract {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  padding: 28px 34px 30px;
+  margin: 8px 0 32px;
+  box-shadow: 0 1px 2px rgba(20, 38, 76, 0.05);
+}
+.abstract h2 {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 900;
+  margin: 0 0 16px;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  border-bottom: 1px solid var(--rule-soft);
+  padding-bottom: 10px;
+}
+.abstract p {
+  font-family: Georgia, serif;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--ink);
+  margin: 0 0 14px;
+}
+.abstract .rooms-list {
+  background: var(--paper-soft);
+  border-left: 3px solid var(--nav-mid);
+  padding: 16px 22px;
+  margin: 18px 0;
+  font-family: Georgia, serif;
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+.abstract .rooms-list .room-item { margin-bottom: 10px; }
+.abstract .rooms-list .room-item:last-child { margin-bottom: 0; }
+.abstract .rooms-list .room-item strong {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-weight: 800;
+  color: var(--link);
+  display: inline-block;
+  margin-right: 4px;
 }
 
 .archive-label {
@@ -97,34 +308,38 @@ a:visited { color: var(--link-visited); }
   text-transform: uppercase;
   letter-spacing: 0.18em;
   border-bottom: 1px solid var(--rule);
-  padding-bottom: 4px;
-  margin: 32px 0 16px;
+  padding-bottom: 6px;
+  margin: 32px 0 18px;
+  font-weight: 700;
 }
 
-/* Entry card on the hub */
+/* ===================== ENTRY CARDS ===================== */
 .entry {
   background: var(--card);
   border: 1px solid var(--rule);
   margin-bottom: 22px;
-  box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgba(20, 38, 76, 0.05);
 }
 .entry-date-bar {
   background: var(--strip);
-  padding: 6px 16px;
-  font-size: 11px;
+  padding: 7px 18px;
+  font-size: 12px;
   color: var(--muted);
-  border-bottom: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule-soft);
+  font-weight: 600;
 }
 .entry-body {
   display: grid;
-  grid-template-columns: 116px 1fr;
-  gap: 16px;
-  padding: 18px 20px;
+  grid-template-columns: 120px 1fr;
+  gap: 18px;
+  padding: 20px 22px;
 }
 .userpic {
-  width: 100px;
-  height: 100px;
+  width: 104px;
+  height: 104px;
   border: 1px solid var(--rule);
+  border-radius: 2px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -135,33 +350,34 @@ a:visited { color: var(--link-visited); }
   letter-spacing: 0.04em;
 }
 .userpic.up1 { background: linear-gradient(135deg, #7a2415 0%, #b53d20 100%); }
-.userpic.up2 { background: linear-gradient(135deg, #5d7493 0%, #82a0c2 100%); }
+.userpic.up2 { background: linear-gradient(135deg, #355aa5 0%, #6e93cc 100%); }
 .userpic.up3 { background: linear-gradient(135deg, #3e6b3e 0%, #6b9a52 100%); }
 .userpic.up4 { background: linear-gradient(135deg, #5a4a6e 0%, #8a6cb1 100%); }
 
 .entry-content h2 {
-  margin: 0 0 4px;
-  font-family: Georgia, serif;
-  font-size: 22px;
-  font-weight: 600;
+  margin: 0 0 6px;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
 }
 .entry-content h2 a { color: var(--link); text-decoration: none; }
-.entry-content h2 a:hover { text-decoration: underline; }
+.entry-content h2 a:hover { text-decoration: underline; color: var(--link-hover); }
 .entry-meta {
-  font-size: 11px;
+  font-size: 12px;
   color: var(--muted);
   margin: 0 0 12px;
 }
-.entry-meta .label { font-weight: bold; color: var(--ink); }
+.entry-meta .label { font-weight: 700; color: var(--ink); }
 .entry-preview {
   font-family: Georgia, serif;
-  font-size: 14px;
-  line-height: 1.55;
+  font-size: 14.5px;
+  line-height: 1.6;
   color: var(--ink);
   margin: 0 0 14px;
 }
 .entry-actions {
-  font-size: 11px;
+  font-size: 12px;
   color: var(--muted);
   display: flex;
   align-items: center;
@@ -169,62 +385,64 @@ a:visited { color: var(--link-visited); }
   border-top: 1px dotted var(--rule-dotted);
   padding-top: 10px;
 }
-.entry-actions a { color: var(--link); }
+.entry-actions a { color: var(--link); text-decoration: none; }
+.entry-actions a:hover { text-decoration: underline; }
 .entry-actions .read-more {
   margin-left: auto;
-  font-weight: bold;
+  font-weight: 700;
 }
 
-/* Footer */
+/* ===================== FOOTER ===================== */
 .footer {
   margin-top: 60px;
   padding-top: 16px;
   border-top: 1px solid var(--rule);
   text-align: center;
-  font-size: 11px;
+  font-size: 12px;
   color: var(--muted);
 }
 
-/* ------- Room page styles ------- */
-
+/* ===================== ROOM PAGES ===================== */
 .entry-full {
   background: var(--card);
   border: 1px solid var(--rule);
   margin-top: 24px;
-  box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgba(20, 38, 76, 0.06);
 }
 .entry-full .entry-header {
   display: grid;
-  grid-template-columns: 116px 1fr;
-  gap: 16px;
-  padding: 20px 20px 0;
+  grid-template-columns: 120px 1fr;
+  gap: 18px;
+  padding: 22px 22px 0;
 }
 .entry-full h1 {
-  font-family: Georgia, serif;
-  font-size: 30px;
-  margin: 0 0 4px;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 34px;
+  margin: 0 0 6px;
   color: var(--link);
-  font-weight: 600;
+  font-weight: 900;
+  letter-spacing: -0.015em;
 }
 .entry-full .meta-row {
-  font-size: 11px;
+  font-size: 12px;
   color: var(--muted);
   margin-bottom: 4px;
 }
-.entry-full .meta-row .label { color: var(--ink); font-weight: bold; }
+.entry-full .meta-row .label { color: var(--ink); font-weight: 700; }
 .entry-full .tags {
-  font-size: 11px;
+  font-size: 12px;
   color: var(--muted);
   margin-bottom: 18px;
 }
 .entry-full .tags a { color: var(--link); }
 .entry-full .entry-body-area {
   padding: 24px 28px 28px;
-  border-top: 1px solid var(--rule);
+  border-top: 1px solid var(--rule-soft);
   margin-top: 16px;
 }
 
-/* Scrollytelling */
+/* ===================== SCROLLYTELLING ===================== */
 .scrolly {
   position: relative;
   display: grid;
@@ -238,6 +456,7 @@ a:visited { color: var(--link-visited); }
   height: calc(100vh - 60px);
   background: var(--warm-paper);
   border: 1px solid var(--rule);
+  border-radius: 3px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -260,21 +479,22 @@ a:visited { color: var(--link-visited); }
   text-transform: uppercase;
   color: var(--accent);
   margin-bottom: 12px;
+  font-weight: 700;
 }
 .panel .title {
-  font-family: Georgia, serif;
+  font-family: "Helvetica Neue", Arial, sans-serif;
   font-size: 22px;
   margin-bottom: 14px;
-  font-weight: 600;
+  font-weight: 800;
   color: var(--ink);
 }
 .panel .placeholder-frame {
   width: 100%;
-  max-width: 320px;
+  max-width: 340px;
   border: 1px solid var(--rule);
   background: #fff;
   padding: 24px;
-  font-size: 11px;
+  font-size: 12px;
   color: var(--muted);
   font-family: Verdana, sans-serif;
   font-style: italic;
@@ -313,7 +533,7 @@ a:visited { color: var(--link-visited); }
   max-width: 360px;
   border: 1px solid var(--rule);
   background: #fff;
-  font-family: Verdana, sans-serif;
+  font-family: "Helvetica Neue", Arial, sans-serif;
 }
 .panel .arch-grid > div { padding: 14px 14px 16px; }
 .panel .arch-grid > div + div { border-left: 1px solid var(--rule); }
@@ -340,50 +560,52 @@ a:visited { color: var(--link-visited); }
   margin-bottom: 16px;
   background: var(--card);
   border: 1px solid var(--rule);
+  border-radius: 3px;
   opacity: 0.45;
   transition: opacity 0.35s ease, border-color 0.35s ease;
 }
 .steps .step.is-active {
   opacity: 1;
   border-color: var(--accent);
-  border-width: 1px;
   box-shadow: 0 0 0 1px var(--accent);
 }
 .steps .step h3 {
   margin: 0 0 10px;
-  font-family: Georgia, serif;
-  font-size: 18px;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 20px;
   color: var(--link);
-  font-weight: 600;
+  font-weight: 800;
+  letter-spacing: -0.01em;
 }
 .steps .step p {
   margin: 0 0 12px;
   font-family: Georgia, serif;
-  font-size: 14px;
-  line-height: 1.6;
+  font-size: 14.5px;
+  line-height: 1.65;
 }
 .steps .step .source {
-  font-size: 10px;
+  font-size: 11px;
   color: var(--muted);
   border-top: 1px dotted var(--rule-dotted);
   padding-top: 8px;
-  font-family: Verdana, sans-serif;
+  font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
-/* Comments section */
+/* ===================== COMMENTS ===================== */
 .comments {
   background: var(--card);
   border: 1px solid var(--rule);
-  padding: 16px 22px 18px;
+  border-radius: 3px;
+  padding: 18px 24px 20px;
   margin: 24px 0 0;
 }
 .comments h3 {
-  margin: 0 0 12px;
-  font-family: Georgia, serif;
-  font-size: 16px;
-  border-bottom: 1px solid var(--rule);
-  padding-bottom: 6px;
-  font-weight: 600;
+  margin: 0 0 14px;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 17px;
+  border-bottom: 1px solid var(--rule-soft);
+  padding-bottom: 8px;
+  font-weight: 800;
 }
 .comment {
   display: grid;
@@ -397,6 +619,7 @@ a:visited { color: var(--link-visited); }
   width: 40px;
   height: 40px;
   border: 1px solid var(--rule);
+  border-radius: 2px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -404,46 +627,56 @@ a:visited { color: var(--link-visited); }
   color: #fff;
   font-weight: bold;
   font-family: Georgia, serif;
-  background: linear-gradient(135deg, #5d7493 0%, #82a0c2 100%);
+  background: linear-gradient(135deg, #355aa5 0%, #6e93cc 100%);
 }
-.comment .who { font-weight: bold; color: var(--link); font-size: 12px; }
-.comment .when { color: var(--muted); font-size: 10px; margin-left: 8px; }
+.comment .who { font-weight: 700; color: var(--link); font-size: 13px; }
+.comment .when { color: var(--muted); font-size: 11px; margin-left: 8px; }
 .comment .body {
-  font-size: 12px;
-  line-height: 1.5;
+  font-size: 13px;
+  line-height: 1.55;
   margin-top: 4px;
   font-family: Georgia, serif;
 }
 .comment.reply {
   margin-left: 32px;
-  background: #f7fafc;
-  padding-left: 12px;
+  background: var(--paper-soft);
+  padding-left: 14px;
   border-left: 2px solid var(--rule-dotted);
 }
 
-/* Stub-room placeholder */
+/* ===================== STUB ROOMS ===================== */
 .stub {
   background: var(--card);
   border: 1px dashed var(--rule);
+  border-radius: 3px;
   padding: 60px 28px;
   margin: 32px 0;
   text-align: center;
 }
 .stub h2 {
-  font-family: Georgia, serif;
-  font-size: 24px;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 26px;
   margin: 0 0 12px;
   color: var(--link);
+  font-weight: 900;
 }
 .stub p { color: var(--muted); margin: 6px 0; }
 .stub .back {
   display: inline-block;
   margin-top: 18px;
   color: var(--link);
-  font-weight: bold;
+  font-weight: 700;
 }
 
-/* Responsive: collapse the scrolly grid on narrow viewports */
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 880px) {
+  .lj-navbar { flex-wrap: wrap; padding: 10px 16px; gap: 14px; min-height: 0; }
+  .lj-navbar .search { min-width: 0; order: 5; width: 100%; margin-left: 0; }
+  .lj-navbar .user-chip { margin-left: auto; }
+  .page { padding: 0 16px; }
+  .page-title { font-size: 32px; }
+  .page-tabs { flex-wrap: wrap; gap: 10px; }
+}
 @media (max-width: 720px) {
   .scrolly { grid-template-columns: 1fr; }
   .sticky-graphic {
@@ -452,6 +685,8 @@ a:visited { color: var(--link-visited); }
     top: 0;
     margin-bottom: 16px;
   }
-  .entry-body, .entry-full .entry-header { grid-template-columns: 80px 1fr; }
+  .entry-body, .entry-full .entry-header { grid-template-columns: 80px 1fr; gap: 14px; }
   .userpic { width: 70px; height: 70px; font-size: 22px; }
+  .entry-content h2 { font-size: 20px; }
+  .entry-full h1 { font-size: 26px; }
 }

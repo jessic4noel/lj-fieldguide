@@ -9,13 +9,37 @@
 <body>
 
 <nav class="lj-navbar">
-  <span class="logo"><span class="zhzh">Живой</span> Журнал</span>
-  <a href="index.html">friends</a>
-  <a href="#">profile</a>
-  <a href="#">calendar</a>
-  <a href="#">memories</a>
-  <span class="right">curator: <strong>jess_ru</strong> · log out</span>
+  <a href="index.html" class="logo">
+    <svg class="lj-icon" viewBox="0 0 42 42" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="21" cy="21" r="19" fill="#ffffff" stroke="#14264c" stroke-width="1.5"/>
+      <circle cx="21" cy="21" r="15" fill="none" stroke="#355aa5" stroke-width="1"/>
+      <g transform="rotate(-32 21 21)">
+        <rect x="9" y="19" width="18" height="4" fill="#2a4a8d" stroke="#14264c" stroke-width="0.4"/>
+        <rect x="9" y="19" width="3" height="4" fill="#c84d24"/>
+        <polygon points="27,19 32,21 27,23" fill="#f0b41a" stroke="#14264c" stroke-width="0.4"/>
+        <polygon points="30.5,20.2 32,21 30.5,21.8" fill="#3a2a14"/>
+      </g>
+    </svg>
+    <span class="lj-wordmark">LIVE<span class="zhzh">JOURNAL</span><sup>™</sup></span>
+  </a>
+  <a href="index.html" class="nav-link">My journal</a>
+  <a href="#" class="nav-link">Communication</a>
+  <a href="#" class="nav-link">The entire LiveJournal</a>
+  <a href="#" class="nav-link">Shop</a>
+  <a href="#" class="nav-link">LJTiMES</a>
+  <div class="search">search</div>
+  <div class="user-chip">
+    <span class="avatar"></span>
+    <span class="username">jess_ru</span>
+    <span class="badge"><span class="icon-mail">✉</span>15</span>
+    <span class="badge"><span class="icon-coin">¤</span>3000</span>
+    <a href="#" class="exit-link">exit</a>
+  </div>
 </nav>
+<div class="lj-subnav">
+  <a href="#">Write</a>
+  <a href="index.html">Friends feed</a>
+</div>
 
 <main class="page">
 
@@ -23,9 +47,36 @@
   <p class="page-subtitle">Russia's accidental public sphere, 1999–2024</p>
   <p class="curator-line">curated by <strong>jess_ru</strong> · POLISCI 227R · advisor: <strong>sanovich</strong></p>
 
-  <div class="note-strip">
-    <strong>About this exhibition.</strong> The four entries below are the rooms of the field guide. Each entry behaves like an actual LiveJournal post — userpic, timestamp, mood, subject — and clicking the title opens that room as its own scroll-driven page. The form mirrors the subject: this is a LiveJournal of LiveJournal.
+  <div class="page-tabs">
+    <a href="#" class="active">Summary</a>
+    <a href="#">All entries</a>
+    <a href="#">Sources</a>
+    <a href="#">About</a>
   </div>
+
+  <section class="abstract">
+    <h2>Abstract</h2>
+    <p>
+      In 1999, a freshman computer science student at the University of Washington built an open source programming system to serve as an online diary. While published without initial intent, Brad Fitzpatrick's "LiveJournal" built Russia's most important public sphere. For around a decade 2001–2011, LiveJournal, most commonly referred to as LJ or ЖЖ in shorthand, served as the primary social networking site in Russia. By the turn of the first decade of the century, ЖЖ served as a platform rich with published expressions of life in Russia: poetry, humor, professional journalism, opposition politics. Interestingly, such immense publications spanning art, culture, and social-political lamentations are built, brick by brick (or rather post by post), a memoir, a reflection of the nation's political environment.
+    </p>
+    <p>
+      LiveJournal also served as a platform so politically significant, intellectuals continue to examine its importance. Anton Nossik, Russia's first blogger, used LJ to invent Russian-language internet journalism. Similarly, academic Roman Leibov pioneered the Russian-language LJ and a tradition of political poetry that thrived amongst ЖЖ threads. Another scholar, USSR-born Eugene Gorny, traced how the use of humor functioned as a distinct mode of social resistance. Alexei Navalny, Russian activist and opposition leader, built his early mobilization on the platform. After this bloom of life, however, ЖЖ was captured and emptied between 2007 and 2017 through a series of Distributed Denial-of-Service (DDoS) cyberattacks, the ownership transfer to Russian state-aligned SUP Media and later Rambler, and Putin's restrictive Bloggers' Law.
+    </p>
+    <p>
+      I propose a media-based "field guide" of LiveJournal's uncanny arc. Specifically, I will build an interactive web exhibition styled as a reflection of LiveJournal, paired with a series of curatorial essays. The interactive web exhibition will be a static website — an HTML, CSS, and JavaScript coded site that opens in any web browser. The website's landing page is laid out as a LiveJournal "friends feed" to bring the site back to life. On this landing page, four entries are displayed exactly as LiveJournal would have rendered them — each with a userpic, timestamp, mood line, entry title, and preview text. The user clicks on each post to walk through four "rooms," each mapping an era or epoch of LiveJournal.
+    </p>
+
+    <div class="rooms-list">
+      <div class="room-item"><strong>Room I — Adoption:</strong> How a small American platform fit Russian intellectual habits.</div>
+      <div class="room-item"><strong>Room II — Art and Culture:</strong> A lively scene of poetry, humor, and artistic community.</div>
+      <div class="room-item"><strong>Room III — Public Sphere:</strong> The platform for journalism, political mobilization, and opposition.</div>
+      <div class="room-item"><strong>Room IV — Capture:</strong> How the platform became hollowed ground through DDoS attacks, ownership change, and law.</div>
+    </div>
+
+    <p>
+      These rooms each serve as their own scroll-driven page, which I intend to build with the Knight Lab scrollytelling library <a href="https://pudding.cool/process/introducing-scrollama/" target="_blank" rel="noopener">Scrollama</a> — a static-site library where artifacts and curatorial captions reveal in sequence as the visitor scrolls through the builder's narrative. The digital exhibition is paired with descriptive curatorial essays: a one-page artist statement for each of the four rooms, plus a brief introduction and closing note.
+    </p>
+  </section>
 
   <div class="archive-label">recent entries · archive view</div>
 
