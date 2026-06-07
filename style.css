@@ -90,7 +90,7 @@ a:visited { color: var(--link-visited); }
   flex-shrink: 0;
 }
 .lj-navbar .lj-wordmark {
-  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: 900;
   font-size: 22px;
   letter-spacing: 0.02em;
@@ -216,20 +216,20 @@ a:visited { color: var(--link-visited); }
 
 /* Page title block */
 .page-title {
-  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 42px;
   font-weight: 900;
   margin: 12px 0 6px;
   letter-spacing: -0.015em;
   color: var(--ink);
 }
-.page-title .zhzh { color: var(--accent); }
+.page-title .zhzh { color: var(--ink); }
 .page-subtitle {
   color: var(--muted);
   font-style: italic;
   margin: 0 0 10px;
   font-size: 16px;
-  font-family: Georgia, serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .curator-line {
   font-size: 12px;
@@ -274,7 +274,7 @@ a:visited { color: var(--link-visited); }
   font-size: 13px;
   color: #5a4a1a;
   margin-bottom: 28px;
-  font-family: Georgia, serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /* ===================== TOP STORIES (homepage) ===================== */
@@ -300,7 +300,7 @@ a:visited { color: var(--link-visited); }
 }
 .top-story:last-child { border-bottom: none; padding-bottom: 8px; }
 .top-story h3 {
-  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 22px;
   font-weight: 900;
   margin: 0 0 6px;
@@ -335,7 +335,7 @@ a:visited { color: var(--link-visited); }
 .top-story .byline .username:hover { text-decoration: underline; }
 .top-story .byline .real-name { color: var(--muted); }
 .top-story .preview {
-  font-family: Georgia, serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
   line-height: 1.6;
   margin: 0;
@@ -360,7 +360,7 @@ a:visited { color: var(--link-visited); }
 /* jess_ru's curator-post entry on homepage */
 .userpic.up-curator {
   background: linear-gradient(135deg, #8a6a1c 0%, #f0b41a 100%);
-  font-family: Georgia, serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .curator-post {
     margin-top: 40px;
@@ -382,7 +382,7 @@ a:visited { color: var(--link-visited); }
     border-top: 2px solid #dbe7fb;
 }
 .curator-post .entry-content .body-prose p {
-  font-family: Georgia, serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 14.5px;
   line-height: 1.7;
   margin: 0 0 14px;
@@ -392,14 +392,14 @@ a:visited { color: var(--link-visited); }
   border-left: 3px solid var(--nav-mid);
   padding: 14px 18px;
   margin: 14px 0;
-  font-family: Georgia, serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
   line-height: 1.6;
 }
 .curator-post .entry-content .body-prose .rooms-inset .room-item { margin-bottom: 8px; }
 .curator-post .entry-content .body-prose .rooms-inset .room-item:last-child { margin-bottom: 0; }
 .curator-post .entry-content .body-prose .rooms-inset .room-item strong {
-  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: 800;
   color: var(--link);
   margin-right: 4px;
@@ -415,7 +415,7 @@ a:visited { color: var(--link-visited); }
   box-shadow: 0 1px 2px rgba(20, 38, 76, 0.05);
 }
 .abstract h2 {
-  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 22px;
   font-weight: 900;
   margin: 0 0 16px;
@@ -425,7 +425,7 @@ a:visited { color: var(--link-visited); }
   padding-bottom: 10px;
 }
 .abstract p {
-  font-family: Georgia, serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
   line-height: 1.7;
   color: var(--ink);
@@ -436,14 +436,14 @@ a:visited { color: var(--link-visited); }
   border-left: 3px solid var(--nav-mid);
   padding: 16px 22px;
   margin: 18px 0;
-  font-family: Georgia, serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 14.5px;
   line-height: 1.6;
 }
 .abstract .rooms-list .room-item { margin-bottom: 10px; }
 .abstract .rooms-list .room-item:last-child { margin-bottom: 0; }
 .abstract .rooms-list .room-item strong {
-  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: 800;
   color: var(--link);
   display: inline-block;
@@ -491,7 +491,7 @@ a:visited { color: var(--link-visited); }
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: Georgia, serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 30px;
   font-weight: bold;
   color: #fff;
@@ -504,7 +504,7 @@ a:visited { color: var(--link-visited); }
 
 .entry-content h2 {
   margin: 0 0 6px;
-  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 24px;
   font-weight: 800;
   letter-spacing: -0.01em;
@@ -518,7 +518,7 @@ a:visited { color: var(--link-visited); }
 }
 .entry-meta .label { font-weight: 700; color: var(--ink); }
 .entry-preview {
-  font-family: Georgia, serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 14.5px;
   line-height: 1.6;
   color: var(--ink);
@@ -565,7 +565,7 @@ a:visited { color: var(--link-visited); }
   padding: 22px 22px 0;
 }
 .entry-full h1 {
-  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 34px;
   margin: 0 0 6px;
   color: var(--link);
@@ -614,7 +614,7 @@ a:visited { color: var(--link-visited); }
     font-style: italic;
 }
 .entry-text {
-    font-family: Georgia, serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
     line-height: 1.7;
     margin: 14px 0;
@@ -626,9 +626,7 @@ a:visited { color: var(--link-visited); }
     font-style: italic;
     font-size: 12.5px;
     color: var(--muted);
-    margin-top: 18px;
-    padding-top: 14px;
-    border-top: 1px dashed var(--rule);
+    margin-top: 8px;
 }
 .entry-text .translation .t-label {
     font-style: normal;
@@ -648,7 +646,7 @@ a:visited { color: var(--link-visited); }
     padding: 18px 24px;
     margin: 14px 0;
     text-align: center;
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 13px;
     color: var(--muted);
     font-style: italic;
@@ -709,7 +707,7 @@ a:visited { color: var(--link-visited); }
 }
 .post-artifact figcaption {
   padding: 12px 16px 14px;
-  font-family: Georgia, serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 12.5px;
   color: var(--muted);
   line-height: 1.5;
@@ -749,14 +747,14 @@ a:visited { color: var(--link-visited); }
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: Georgia, serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 22px;
   font-weight: bold;
   color: #fff;
   background: linear-gradient(135deg, #8a6a1c 0%, #f0b41a 100%);
 }
 .author-note h1 {
-  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 22px;
   font-weight: 900;
   margin: 0 0 6px;
@@ -771,7 +769,7 @@ a:visited { color: var(--link-visited); }
 }
 .author-note .who-line strong { color: var(--ink); }
 .author-note .frame {
-  font-family: Georgia, serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
   line-height: 1.6;
   margin: 0;
@@ -842,7 +840,7 @@ a:visited { color: var(--link-visited); }
   font-weight: 700;
 }
 .panel .title {
-  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 22px;
   margin-bottom: 14px;
   font-weight: 800;
@@ -856,13 +854,13 @@ a:visited { color: var(--link-visited); }
   padding: 24px;
   font-size: 12px;
   color: var(--muted);
-  font-family: Verdana, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-style: italic;
   margin-bottom: 14px;
   line-height: 1.5;
 }
 .panel .placeholder-frame .browser-bar {
-  font-family: Verdana, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-style: normal;
   font-size: 10px;
   background: #ddd;
@@ -875,7 +873,7 @@ a:visited { color: var(--link-visited); }
 .panel .placeholder-frame .lj-mockup {
   font-style: normal;
   text-align: left;
-  font-family: Georgia, serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 13px;
   color: var(--ink);
 }
@@ -893,7 +891,7 @@ a:visited { color: var(--link-visited); }
   max-width: 360px;
   border: 1px solid var(--rule);
   background: #fff;
-  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .panel .arch-grid > div { padding: 14px 14px 16px; }
 .panel .arch-grid > div + div { border-left: 1px solid var(--rule); }
@@ -931,7 +929,7 @@ a:visited { color: var(--link-visited); }
 }
 .steps .step h3 {
   margin: 0 0 10px;
-  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
   color: var(--link);
   font-weight: 800;
@@ -939,7 +937,7 @@ a:visited { color: var(--link-visited); }
 }
 .steps .step p {
   margin: 0 0 12px;
-  font-family: Georgia, serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 14.5px;
   line-height: 1.65;
 }
@@ -948,7 +946,7 @@ a:visited { color: var(--link-visited); }
   color: var(--muted);
   border-top: 1px dotted var(--rule-dotted);
   padding-top: 8px;
-  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /* ===================== COMMENTS ===================== */
@@ -961,7 +959,7 @@ a:visited { color: var(--link-visited); }
 }
 .comments h3 {
   margin: 0 0 14px;
-  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 17px;
   border-bottom: 1px solid var(--rule-soft);
   padding-bottom: 8px;
@@ -986,7 +984,7 @@ a:visited { color: var(--link-visited); }
   font-size: 14px;
   color: #fff;
   font-weight: bold;
-  font-family: Georgia, serif;
+  font-family: Arial, Helvetica, sans-serif;
   background: linear-gradient(135deg, #355aa5 0%, #6e93cc 100%);
 }
 .comment .who { font-weight: 700; color: var(--link); font-size: 13px; }
@@ -995,7 +993,7 @@ a:visited { color: var(--link-visited); }
   font-size: 13px;
   line-height: 1.55;
   margin-top: 4px;
-  font-family: Georgia, serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .comment.reply {
   margin-left: 32px;
@@ -1014,7 +1012,7 @@ a:visited { color: var(--link-visited); }
   text-align: center;
 }
 .stub h2 {
-  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 26px;
   margin: 0 0 12px;
   color: var(--link);
