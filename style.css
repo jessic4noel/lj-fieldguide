@@ -5,12 +5,12 @@
 
 :root {
   /* Palette */
-  --paper: #e8f2fb;          /* light blue body background */
+  --paper: #ffffff;          /* white body background */
   --paper-soft: #f3f8fc;
   --card: #ffffff;
-  --nav-top: #355aa5;        /* navy gradient — top */
-  --nav-mid: #2a4a8d;        /* navy gradient — mid */
-  --nav-bot: #1f3870;        /* navy gradient — bottom */
+  --nav-top: #7f9bd9;        /* light blue gradient — top */
+  --nav-mid: #6d8ecf;        /* light blue gradient — mid */
+  --nav-bot: #5c7fc2;        /* light blue gradient — bottom */
   --nav-edge: #14264c;
   --strip: #e3edf6;
   --rule: #bcd0e3;
@@ -31,11 +31,25 @@ html, body { margin: 0; padding: 0; }
 body {
   background: var(--paper);
   color: var(--ink);
-  font-family: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Force Arial site-wide */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span,
+div {
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 a { color: var(--link); text-decoration: underline; }
@@ -44,7 +58,12 @@ a:visited { color: var(--link-visited); }
 
 /* ===================== TOP NAVBAR ===================== */
 .lj-navbar {
-  background: linear-gradient(to bottom, var(--nav-top) 0%, var(--nav-mid) 55%, var(--nav-bot) 100%);
+  background: linear-gradient(
+      to bottom,
+      #8fb0e8 0%,
+      #7f9bd9 55%,
+      #6d8ecf 100%
+  );
   color: #fff;
   padding: 0 28px;
   display: flex;
@@ -173,13 +192,14 @@ a:visited { color: var(--link-visited); }
 
 /* Sub-row under the navbar with "Write / Friends feed" */
 .lj-subnav {
-  background: linear-gradient(to bottom, var(--nav-bot) 0%, var(--nav-edge) 100%);
+  background: #dbe7fb;
   padding: 6px 28px;
   text-align: right;
   font-size: 13px;
+  border-bottom: 2px solid #a9c0ea;
 }
 .lj-subnav a {
-  color: #fff;
+  color: #355aa5;
   text-decoration: none;
   margin-left: 18px;
   font-weight: 600;
@@ -259,19 +279,24 @@ a:visited { color: var(--link-visited); }
 
 /* ===================== TOP STORIES (homepage) ===================== */
 .section-header {
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 900;
-  margin: 36px 0 8px;
-  letter-spacing: -0.01em;
+  margin: 36px 0 16px;
   color: var(--ink);
-  border-bottom: 1px solid var(--rule);
-  padding-bottom: 10px;
+  border-bottom: 4px solid #6d8ecf;
+  padding-bottom: 12px;
+}
+.section-subtitle {
+    display: block;
+    font-size: 0.5em;
+    font-weight: normal;
+    color: #5c7fc2;
+    margin-top: 4px;
 }
 .top-stories-section { margin-bottom: 24px; }
 .top-story {
   padding: 18px 0 22px;
-  border-bottom: 1px dotted var(--rule-dotted);
+  border-bottom: 3px solid #dbe7fb;
 }
 .top-story:last-child { border-bottom: none; padding-bottom: 8px; }
 .top-story h3 {
@@ -336,7 +361,25 @@ a:visited { color: var(--link-visited); }
   background: linear-gradient(135deg, #8a6a1c 0%, #f0b41a 100%);
   font-family: Georgia, serif;
 }
-.curator-post .entry { margin-bottom: 0; }
+.curator-post {
+    margin-top: 40px;
+}
+.curator-post .entry {
+    margin-bottom: 0;
+    border: 1px solid #a9c0ea;
+}
+.curator-post .entry-date-bar {
+    background: #dbe7fb;
+    color: #355aa5;
+    font-weight: bold;
+    border-bottom: 2px solid #a9c0ea;
+}
+.curator-post .entry-content h2 {
+    color: #355aa5;
+}
+.curator-post .entry-actions {
+    border-top: 2px solid #dbe7fb;
+}
 .curator-post .entry-content .body-prose p {
   font-family: Georgia, serif;
   font-size: 14.5px;
