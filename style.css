@@ -354,6 +354,7 @@ a:visited { color: var(--link-visited); }
   display: block;
   color: var(--muted);
   font-style: italic;
+  font-size: 13px;
 }
 
 /* jess_ru's curator-post entry on homepage */
@@ -621,6 +622,26 @@ a:visited { color: var(--link-visited); }
 }
 .entry-text p { margin: 0 0 12px; }
 .entry-text p:last-child { margin-bottom: 0; }
+.entry-text .translation {
+    font-style: italic;
+    font-size: 12.5px;
+    color: var(--muted);
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px dashed var(--rule);
+}
+.entry-text .translation .t-label {
+    font-style: normal;
+    font-weight: bold;
+    color: var(--ink);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 8px;
+}
+.entry-text .translation p { margin: 0 0 8px; font-size: 12.5px; }
+.entry-text .translation p:last-child { margin: 0; }
 .entry-text .youtube-stub {
     background: #f5f5f5;
     border: 1px solid var(--rule);
